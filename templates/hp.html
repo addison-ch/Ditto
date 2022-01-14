@@ -7,10 +7,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>You're a wizard Harry!</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/hp.css')}}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 </head>
 
 <body>
+    <div class="wrapper">
+        <form action="/hp/result" method="post">
+            <div class="title">
+                <h3 class="">Enter your settings and hit the GENERATE button 🧙‍♂️</h3>
+            </div>
+            <div class="mb-3">
+                <label for="char" class="form-label">Pick a character!</label>
+                <select name="char" class="form-select" id="char" aria-label="select character">
+                    <option value="harry">Harry Botter</option>
+                    <option value="ron">Ron Weasle</option>
+                    <option value="herm">Herminy Granger</option>
+                    <option value="dumb">Albot Dumbeldore</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="sent" class="form-label">Pick a sentiment!</label>
+
+                <select name="sentiment" class="form-select" id="sent" aria-label="Select sentiment">
+                    <option value="pos">Positive</option>
+                    <option value="neut">Neutral</option>
+                    <option value="neg">Negative</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="word_count" class="form-label">Select a maximum number of words</label>
+                <input type="text" name="words" class="form-control" id="word_count" placeholder="(default as 50)">
+            </div>
+            <div class="mt-3">
+                <button type="submit" class="btn btn-primary">GENERATE</button>
+            </div>
+        </form>
+
+        <div class="text">
+            {% if quote %}
+            <div class="speech-bubble">{{quote}}</div>
+            <img src="{{url_for('static', filename='harry1.jpg')}}" alt="">
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 
 </body>
 

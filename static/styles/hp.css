@@ -5,5 +5,68 @@ body {
   background-size:     cover;                      /* <------ */
   background-repeat:   no-repeat;
   background-position: center center;  
+  text-align: center;
   background-attachment: fixed;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  background-color: rgba(180, 170, 190, 0.507);
+  padding: 25px 0;
+  border-radius: 25px;
+  
+}
+.wrapper {
+  display:flex;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.text {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.speech-bubble {
+	position: relative;
+	background: #231520;
+	border-radius: .4em;
+}
+
+.speech-bubble {
+  background: #ddd;
+  color: #333;
+  display: inline-block;
+	font-size: 14px;
+  line-height: 4em;
+  margin-bottom: 1em;
+	padding: 0 1em;
+	position: relative;
+	text-align: center;
+	vertical-align: top;
+		min-width: 7em;
+}
+.speech-bubble:after {
+	border: 1em solid transparent;
+	border-top-color: #ddd;
+	content: '';
+	margin-left: -1em;
+	position: absolute;
+		top: 100%;
+		left: 50%;
+	width: 0;
+	height: 0;
+}
+
+img {
+  width: 100px;
 }

@@ -32,4 +32,4 @@ I have parsed the dialogue from all  the Harry Potter movies, Game of Thrones ep
 
 
 ## 🐎 Screenshot
-![screenshot](public/ditto2.png)
+![screenshot](static/ditto2.png)

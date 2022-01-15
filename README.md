@@ -16,7 +16,7 @@ I have parsed the dialogue from all  the Harry Potter movies, Game of Thrones ep
 ## 🧝‍♂️ Try it yourself
 1.  Clone and move into repository
 ```
- $ git clone https://github.com/addison-ch/ditto.git
+ $ git clone https://github.com/addison-ch/Ditto.git
  $ cd markov-gen
   ```
 2. Install requirements

@@ -28,11 +28,11 @@
                 </select>
             </div>
             <div class="mb-3">
-                <label for="sent" class="form-label">Pick a sentiment!</label>
+                <label for="sent" class="form-label">Pick a sentiment! (neutral recommended)</label>
 
                 <select name="sentiment" class="form-select" id="sent" aria-label="Select sentiment">
-                    <option value="pos">Positive</option>
                     <option value="neut">Neutral</option>
+                    <option value="pos">Positive</option>
                     <option value="neg">Negative</option>
                 </select>
             </div>
@@ -48,7 +48,7 @@
         <div class="text">
             {% if quote %}
             <div class="speech-bubble">{{quote}}</div>
-            <img src="{{url_for('static', filename='harry1.jpg')}}" alt="">
+            <img src="{{url_for('static', filename=img)}}" alt="">
 
             {% endif %}
 

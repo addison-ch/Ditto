@@ -1,5 +1,6 @@
 html,
 body {
+  margin-top: 4em;
   height: 100%;
   background-image: url(../bg.jpg);
   background-size:     cover;                      /* <------ */
@@ -46,7 +47,7 @@ form{
   background: #ddd;
   color: #333;
   display: inline-block;
-	font-size: 14px;
+	font-size: 18px;
   line-height: 4em;
   margin-bottom: 1em;
 	padding: 0 1em;
@@ -68,5 +69,6 @@ form{
 }
 
 img {
-  width: 100px;
+  width: 169px;
+  margin-bottom: 3em;
 }

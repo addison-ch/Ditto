@@ -1,7 +1,8 @@
 from flask import Flask, request, render_template, jsonify
 from generator import gen_sentence
 import json
-
+import random
+from sentiment import analyze_sentiment
 
 app = Flask(__name__)
 
@@ -17,13 +18,25 @@ data = {
     "dumb": dumbMarkov
 }
 
+images = {
+    "harry": ['harry1.jpg',
+              'harry2.jpeg',
+              'harry3.jfif'],
+    "herm": ["herm1.jpg"],
+    "ron": ["ron1.jpg",
+            "ron2.jpg",
+            "ron3.jfif"],
+    "dumb": ["dumb1.jpg"]
+
+}
+
 
 @app.route('/')
 def index():
     return render_template('index.html')
 
 
-@app.route('/hp')
+@app.route('/hp/')
 def hp():
     return render_template('hp.html')
 
@@ -41,22 +54,37 @@ def hp_result():
     except:
         pass
 
-    quote = gen_sentence(data[char], count)
+    img = random.choice(images[char])
 
-    return render_template('hp.html', quote=quote)
+    quote = ""
+    loops = 0
+
+    while loops < 1000:
+        quote = gen_sentence(data[char], count)
+        sentiment_data = analyze_sentiment(quote)
+        compound_score = sentiment_data[3]
+        if compound_score <= -0.25 and sentiment == "neg":
+            break
+        elif compound_score >= 0.25 and sentiment == "pos":
+            break
+        elif compound_score > -.025 and compound_score < 0.25 and sentiment == "neut":
+            break
+        loops += 1
+
+    return render_template('hp.html', quote=quote, img=img)
 
 
-@app.route('/got')
+@app.route('/got/')
 def got():
     return render_template('hp.html')
 
 
-@app.route('/office')
+@app.route('/office/')
 def office():
     return render_template('hp.html')
 
 
-@app.route('/custom')
+@app.route('/custom/')
 def custom():
     return render_template('hp.html')
 

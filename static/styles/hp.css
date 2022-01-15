@@ -68,7 +68,12 @@ form{
 	height: 0;
 }
 
-img {
+.icon {
   width: 169px;
   margin-bottom: 3em;
 }
+
+.ditto{ position: fixed;
+top: 8px;
+  left: 16px;
+width: 50px;}

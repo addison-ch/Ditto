@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template, jsonify
-from generator import gen_sentence
+from generator import gen_sentence, create_markov_chain
 import json
 import random
 from sentiment import analyze_sentiment
@@ -76,17 +76,30 @@ def hp_result():
 
 @app.route('/got/')
 def got():
-    return render_template('hp.html')
+    return "WORK IN PROGRESS. We are still going through all the Game of Thrones data."
 
 
 @app.route('/office/')
 def office():
-    return render_template('hp.html')
+    return "WORK IN PROGRESS. We are still going through all the Office data."
 
 
 @app.route('/custom/')
 def custom():
-    return render_template('hp.html')
+    return render_template('custom.html')
+
+
+@app.route('/custom/result', methods=['POST'])
+def custom_result():
+    try:
+        text_data = request.form["words"]
+        model = create_markov_chain(text_data)
+
+        quote = gen_sentence(model, 50)
+
+        return render_template('custom.html', quote=quote)
+    except:
+        return render_template('custom.html')
 
 
 if __name__ == "__main__":

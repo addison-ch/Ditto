@@ -21,7 +21,7 @@ I have parsed the dialogue from all  the Harry Potter movies, Game of Thrones ep
 2. Install requirements
 
   ```
-  $ pip install flask nltk
+  $ pip install -r requirements.txt
   ```
 3. Run the server
  ```

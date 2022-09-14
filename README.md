@@ -1,6 +1,6 @@
 # 🧙‍♂️ DITTO
 
-#### Ditto allows users to procedurally generate text using [Markov chain](https://en.wikipedia.org/wiki/Markov_chainl) models given text as a corpus and sentiment as a parameter. You can either generate text from the pre-trained models available or input your own text and train your own Markov chain text generator! 
+#### Ditto allows users to procedurally generate text using [Markov chain](https://en.wikipedia.org/wiki/Markov_chain) models given text as a corpus and sentiment as a parameter. You can either generate text from the pre-trained models available or input your own text and train your own Markov chain text generator! 
 
 I have parsed the dialogue from all  the Harry Potter movies, Game of Thrones episodes, and The Office episodes (work in progress) to use as corpora for creating the text generators. You can generate text based on your favourite characters like Harry Potter or Albus Dumbledore.
 

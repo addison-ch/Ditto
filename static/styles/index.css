@@ -46,6 +46,8 @@ body {
   }
   
   .card-grid{
+    margin-left: 4em;
+    margin-right: 4em;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-column-gap: var(--spacing-l);

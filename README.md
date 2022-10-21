@@ -1,33 +1,34 @@
-## 💭 Comicfy - Hack the Valley 7 
+# 🧙‍♂️ DITTO
 
-#### Comicfy.AI aims to turn any piece of fiction, historical account, or life story into a visual experience (in the format of a comic strip).
+#### Ditto allows users to procedurally generate text using [Markov chain](https://en.wikipedia.org/wiki/Markov_chain) models given text as a corpus and sentiment as a parameter. You can either generate text from the pre-trained models available or input your own text and train your own Markov chain text generator! 
 
-The front-end of our application was developed using React. We utilised multi-threading with Python in the backend to concurrently make requests to the Wombo Dream API and Cohere's API. We also built an algorithm to determine to most relevant sentences in a story. Our back-end is built using FastAPI (Python framework) to integrate everything together!
+I have parsed the dialogue from all  the Harry Potter movies, Game of Thrones episodes, and The Office episodes (work in progress) to use as corpora for creating the text generators. You can generate text based on your favourite characters like Harry Potter or Albus Dumbledore.
 
-Our team of 4 ended up demo-ing this project at HTV 7, and although we didn't win (😢), we learned a whole lot about APIs, HTTP requests, and general software development!
+- Harry Potter data retrieved from this [dataset](https://www.kaggle.com/kornflex/harry-potter-movies-dataset)
+- Game of Thrones data retrieved from [here](https://www.kaggle.com/albenft/game-of-thrones-script-all-seasons)
+
+
+#### Ditto is built using HTML/CSS to serve the front-end, and Python/Flask for the server-side API and the text generation.
 
 
 
-## 💥 Try it yourself
+
+## 🧝‍♂️ Try it yourself
 1.  Clone and move into repository
 ```
- $ git clone https://github.com/addison-ch/Comicfy.git
+ $ git clone https://github.com/addison-ch/Ditto.git
  ```
-2. Set up client
+2. Install requirements
 
   ```
-  cd client
-  npm install
-  npm start
+  $ pip install flask nltk
   ```
 3. Run the server
  ```
-  cd server
-  pip install -r requirements.txt
-  python -m uvicorn main:app
+  $ python app.py
   ```
 
 
 
-## 💫 Screenshot
-![screenshot](https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/254/743/datas/gallery.jpg)
+## 🐎 Screenshot
+![screenshot](static/ditto2.png)
